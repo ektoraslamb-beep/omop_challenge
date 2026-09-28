@@ -82,7 +82,7 @@ services:
       - ETL_DATABASE=ohdsi
       - ETL_USERNAME=admin
       - ETL_PASSWORD=secret
-      - ETL_SOURCE=/app/resources/test_datasets/1000_records
+      - ETL_SOURCE=/app/resources/test_datasets/junior_challenge_30
       - ETL_DEBUG=False
       - ETL_SKIPVOCAB=True
 

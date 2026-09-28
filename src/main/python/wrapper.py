@@ -74,27 +74,27 @@ class Wrapper(EtlWrapper):
 
         # Transformations
         logger.info('{:-^100}'.format(' ETL '))
-        self.execute_transformation(basedata_to_person)
-        self.execute_transformation(basedata_to_visit)
-        self.execute_transformation(fulong_to_visit)
-        self.execute_transformation(basedata_to_stem_table)
-        while self.has_next_fulong_batch():
-            self.execute_transformation(fulong_to_stem_table)
-        self.execute_transformation(basedata_diagnosis_to_stem_table)
-        self.execute_transformation(basedata_dre_to_stem_table)
-        self.execute_transformation(fulong_dre_to_stem_table)
-        self.execute_transformation(basedata_to_observation_period)
-        self.execute_transformation(enddata_to_stem_table)
-        self.execute_transformation(basedata_to_episode)
-        self.execute_transformation(fulong_to_episode)
+        #self.execute_transformation(basedata_to_person)
+        #self.execute_transformation(basedata_to_visit)
+        #self.execute_transformation(fulong_to_visit)
+        #self.execute_transformation(basedata_to_stem_table)
+        #while self.has_next_fulong_batch():
+            #self.execute_transformation(fulong_to_stem_table)
+        #self.execute_transformation(basedata_diagnosis_to_stem_table)
+        #self.execute_transformation(basedata_dre_to_stem_table)
+        #self.execute_transformation(fulong_dre_to_stem_table)
+        #self.execute_transformation(basedata_to_observation_period)
+        #self.execute_transformation(enddata_to_stem_table)
+        #self.execute_transformation(basedata_to_episode)
+        #self.execute_transformation(fulong_to_episode)
 
         logger.info('Stem table to domains')
         self.stem_table_to_domains()
 
         logger.info('Episode event')
-        self.execute_transformation(basedata_to_episode_event)
-        self.execute_transformation(fulong_to_episode_event)
-        self.execute_transformation(cdm_source)
+        #self.execute_transformation(basedata_to_episode_event)
+        #self.execute_transformation(fulong_to_episode_event)
+        #self.execute_transformation(cdm_source)
 
         self.log_summary()
         self.log_runtime()
