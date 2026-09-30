@@ -43,6 +43,7 @@ class Wrapper(EtlWrapper):
         self.source_table_basedata = None
         self.source_table_fulong = None
         self.source_table_enddata = None
+        self.source_table_challenge = None
         self.fulong_batch_number = 0
         self.FULONG_BATCH_SIZE = 5000
 
@@ -87,6 +88,12 @@ class Wrapper(EtlWrapper):
         #self.execute_transformation(enddata_to_stem_table)
         #self.execute_transformation(basedata_to_episode)
         #self.execute_transformation(fulong_to_episode)
+        self.execute_transformation(challenge_to_person)
+        self.execute_transformation(challenge_to_visit)
+        self.execute_transformation(challenge_to_observation_period)
+        self.execute_transformation(challenge_to_measurement)
+        self.execute_transformation(challenge_to_condition)
+        self.execute_transformation(challenge_to_procedure)
 
         logger.info('Stem table to domains')
         self.stem_table_to_domains()
@@ -313,8 +320,18 @@ class Wrapper(EtlWrapper):
     def get_basedata(self):
         if not self.source_table_basedata:
             self.source_table_basedata = SourceData(self.source_folder / 'basedata.csv')
-
+            
         return self.source_table_basedata
+
+    def get_challenge_data(self):
+        if not self.source_table_challenge:
+            self.source_table_challenge = SourceData(self.source_folder/'junior_challenge_30.csv',
+            delimiter = ';',
+            encoding = 'utf-8-sig')
+
+        return self.source_table_challenge
+    
+
 
     def get_fulong(self):
         if not self.source_table_fulong:

@@ -13,3 +13,9 @@ from src.main.python.transformation.basedata_to_episode_event import basedata_to
 from src.main.python.transformation.fulong_to_episode import fulong_to_episode
 from src.main.python.transformation.fulong_to_episode_event import fulong_to_episode_event
 from src.main.python.transformation.cdm_source import cdm_source
+from src.main.python.transformation.challenge_to_person import challenge_to_person
+from src.main.python.transformation.challenge_to_visit import challenge_to_visit
+from src.main.python.transformation.challenge_to_observation_period import challenge_to_observation_period
+from src.main.python.transformation.challenge_to_measurement import challenge_to_measurement
+from src.main.python.transformation.challenge_to_condition import challenge_to_condition
+from src.main.python.transformation.challenge_to_procedure import challenge_to_procedure
