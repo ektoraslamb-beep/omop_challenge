@@ -19,16 +19,17 @@ import codecs
 
 class SourceData:
     """ Base object for reading source data file """
-    def __init__(self, source_file_path, delimiter=','):
+    def __init__(self, source_file_path, delimiter=',', encoding = 'windows-1252'):
         self.data_dicts = []  # list of dicts, with each dict representing one row of source data
         self.delimiter = delimiter
+        self.encoding = encoding
         self.load(source_file_path)
 
     def __iter__(self):
         yield from self.data_dicts
 
     def load(self, source_file_path):
-        with codecs.open(source_file_path, encoding='windows-1252') as f_in:
+        with codecs.open(source_file_path, encoding= self.encoding) as f_in:
             self.data_dicts = [CaseInsensitiveDict(x) for x in csv.DictReader(f_in, delimiter=self.delimiter)]
 
 
