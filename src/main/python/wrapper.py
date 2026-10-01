@@ -94,6 +94,9 @@ class Wrapper(EtlWrapper):
         self.execute_transformation(challenge_to_measurement)
         self.execute_transformation(challenge_to_condition)
         self.execute_transformation(challenge_to_procedure)
+        self.execute_transformation(challenge_to_drug)
+        self.execute_transformation(challenge_to_observation)
+        self.execute_transformation(challenge_to_death)
 
         logger.info('Stem table to domains')
         self.stem_table_to_domains()

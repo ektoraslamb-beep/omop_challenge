@@ -19,3 +19,6 @@ from src.main.python.transformation.challenge_to_observation_period import chall
 from src.main.python.transformation.challenge_to_measurement import challenge_to_measurement
 from src.main.python.transformation.challenge_to_condition import challenge_to_condition
 from src.main.python.transformation.challenge_to_procedure import challenge_to_procedure
+from src.main.python.transformation.challenge_to_drug import challenge_to_drug
+from src.main.python.transformation.challenge_to_observation import challenge_to_observation
+from src.main.python.transformation.challenge_to_death import challenge_to_death
